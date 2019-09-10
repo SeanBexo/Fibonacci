@@ -1,0 +1,38 @@
+<html><head><title></title></head>
+<body>
+
+<div>
+<input type="number" placeholder="Enter a number here" id="value"/>
+<button type="button" onclick="View();">Calculate</button>
+</div>
+<div id="display"> The Answer is displayed here! </div>
+
+<script>
+function Fib(num)
+{
+	if((num == 0) || (num == 1))
+	{	return num;	}
+	else
+	{	return Fib(num - 1) + Fib(num - 2);	}
+}
+
+function View()
+{	
+	var val = document.getElementById('display');
+	var answer = "";
+	var enteredValue = document.getElementById("value").value;
+	for(var n = 1; n <= 3; n++)
+	{
+		++enteredValue;
+		answer += Fib(enteredValue);
+		if(n != 3)
+		{
+			answer += ", ";
+		}
+	}
+	val.innerHTML = answer;
+}
+</script>
+
+</body>
+</html>
